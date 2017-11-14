@@ -65,6 +65,11 @@ return el.getAttribute(attr);
 });
 }
 };
+Dome.prototype.remove = function(){
+return this.forEach(function(el){
+el.remove(el);  
+});
+};
 var get = function (selector) {
 var els;
 if (typeof selector === 'string') {
@@ -78,7 +83,6 @@ return new Dome(els);
 };
 return get;
 }
-
 if(typeof get === 'undefined'){
 window.get = library();
 }

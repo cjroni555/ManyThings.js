@@ -1,7 +1,9 @@
 (function(window){
 "use strict";
 function library(){
-if(typeof window.document === 'defined' && typeof window.document !== 'undefined'){
+if(typeof window.document !== 'defined'){
+throw new Error("Window Must Be Defined And Have A Docuement"); 
+}
 function Dome(els){
 for(var i = 0; i < els.length; i++ ){
 this[i] = els[i];
@@ -84,7 +86,6 @@ els = [selector];
 return new Dome(els);
 };
 return get;
-}
 }
 if(typeof get === 'undefined'){
 window.get = library();

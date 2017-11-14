@@ -1,6 +1,7 @@
 (function(window){
 "use strict";
 function library(){
+if(typeof window.document === 'defined' && typeof window.document !== 'undefined'){
 function Dome(els){
 for(var i = 0; i < els.length; i++ ){
 this[i] = els[i];
@@ -70,6 +71,7 @@ return this.forEach(function(el){
 el.remove(el);  
 });
 };
+Dome.prototype.
 var get = function (selector) {
 var els;
 if (typeof selector === 'string') {
@@ -82,6 +84,7 @@ els = [selector];
 return new Dome(els);
 };
 return get;
+}
 }
 if(typeof get === 'undefined'){
 window.get = library();
